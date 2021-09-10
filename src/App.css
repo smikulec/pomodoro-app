@@ -1,38 +1,74 @@
 .App {
   text-align: center;
+  font-style: Roboto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-list {
+  list-style: none;
+  display: inline-flex;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-list li {
+  margin: 10px;
+  border: 1px solid rgb(228, 209, 209);
+  border-radius: 10%;
+  padding: 1rem 2rem;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.nav-link{
+  text-decoration: none;
+  color: black;
+}
+
+.nav-link:active{
+  color: pink;
+}
+
+#time-left {
+  display: inline-flex;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 150px;
+  height: 150px;
+  border: 2px solid #fc7753;
+  border-radius: 50%;
+  text-align: center;
+  margin: 1.5rem;
+  font-size: 3rem;
+  color: #fc7753;
+}
+
+.settings-container {
+  display: inline-flex;
+  flex-flow: row nowrap;
+}
+
+.session-container, .break-container {
+  margin: 0.5rem 1rem;
+}
+
+.session-counter-container {
+  margin: 1rem;
+}
+
+.length-span {
+  padding: 0.1rem 0.5rem;
+}
+
+.active-button, .reset-button {
+  border-radius: 5px;
   color: white;
+  background-color: #403D58;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  margin: 0 1rem;
+  font-style: Roboto;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.change-button {
+  border: none;
+  border-radius: 5px;
+  background-color: #66d7d1;
 }
