@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Link } from "react-router-dom";
 
-import BreakLength from './components/BreakLength';
+import Home from './components/Home';
 import SessionLength from './components/SessionLength';
 import SessionCounter from './components/SessionCounter';
 import TaskForm from './components/TaskForm';
@@ -54,11 +54,6 @@ export default function App() {
     return () => clearInterval(interval);
 
   }, [isActive, timeSpent])
-
-  useEffect(() => {
-    
-  }, [task]);
-
   
   const decrementBreakLength = () => {
     const decreasedBreakLength = breakLength - 60 > 60 ? breakLength - 60 : 60;
@@ -101,15 +96,6 @@ export default function App() {
     
   }
 
-  function Home() {
-    return(
-      <div>
-        <h1>Welcome.</h1>
-        <h2>Here you can track your productivity using pomodoro technique.</h2>
-      </div>
-    ); 
-  }
-
   function Settings() {
     return(
       <div>
@@ -117,11 +103,13 @@ export default function App() {
         <TaskForm onCreateTask={handleCreateTask}/>
         <div className="settings-container">
           <SessionLength
+            type="work"
             length={sessionLength}
             increment={incrementSessionLength}
             decrement={decrementSessionLength}
           />
-          <BreakLength 
+          <SessionLength
+            type="break" 
             length={breakLength}
             increment={incrementBreakLength}
             decrement={decrementBreakLength}

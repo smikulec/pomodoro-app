@@ -1,11 +1,9 @@
 import React from 'react';
 
-export default function SessionLength(props) {
-    const { increment, decrement, length } = props;
-
+export default function SessionLength({increment, decrement, length, type}) {
     return(
     <div class="session-container">
-        <p id="session-label">Set work time:</p>
+        <p id="session-label">Set {type === 'work' ? 'work' : 'break'} time:</p>
         <button 
             className="change-button"
             onClick={decrement} 
