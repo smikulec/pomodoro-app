@@ -1,6 +1,20 @@
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+
 .App {
   text-align: center;
-  font-style: Roboto;
+  font-family: 'Roboto', sans-serif;
 }
 
 .nav-list {
@@ -16,6 +30,10 @@
 
 }
 
+.nav-list li:hover {
+  background-color: lightblue;
+}
+
 .nav-link{
   text-decoration: none;
   color: black;
@@ -27,7 +45,6 @@
 
 #time-left {
   display: inline-flex;
-  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
   width: 150px;

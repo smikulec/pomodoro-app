@@ -1,46 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { AppContext } from '../../pages/_app';
 
-export default function TaskForm({onCreateTask}) {
+export default function TaskForm() {
+	const { dispatch } = useContext(AppContext);
 
-    const [state, setState] = useState({
-        name:""
-    })
+	const [taskInput, setTaskInput] = useState({
+		name: '',
+	});
 
-    const handleChange = (event) => {
-        event.preventDefault();
+	const handleChange = (event) => {
+		event.preventDefault();
 
-        const name = event.target.name;
-        const value = event.target.value;
+		const name = event.target.name;
+		const value = event.target.value;
 
-        setState((state) => ({
-            ...state,
-            [name]: value
-        }));
+		setTaskInput((taskInput) => ({
+			...taskInput,
+			[name]: value,
+		}));
+	};
 
-    }
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		dispatch({ type: 'createTask', payload: taskInput });
+	};
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        onCreateTask(state);
-    }
-
-    return (
-        <form onSubmit={handleSubmit} autoComplete="off">
-            <label for="task">Enter a task you'd like to work on</label>
-            <br />
-            <input 
-                id="task" 
-                name="name" 
-                value={state.name} 
-                type="text" 
-                onChange={handleChange}
-                placeholder="Learn React"                
-            />
-            <button 
-                type="submit"
-            >
-                Enter
-            </button>
-        </form>
-    );
+	return (
+		<>
+			<p>What would you like to invest your time in?</p>
+			<form onSubmit={handleSubmit} autoComplete='off'>
+				<label htmlFor='task'></label>
+				<br />
+				<input
+					id='task'
+					name='name'
+					value={taskInput.name}
+					type='text'
+					onChange={handleChange}
+					placeholder='Learn React'
+				/>
+				<button type='submit'>Enter</button>
+			</form>
+		</>
+	);
 }
