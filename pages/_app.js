@@ -126,8 +126,18 @@ export default function App({ Component, pageProps }) {
 	};
 
 	useEffect(() => {
-		setTaskList((currentList) => [...currentList, state.taskName]);
-	}, [state.taskName]);
+		if (taskList.some((task) => task.taskName.name === state.taskName.name)) {
+			return;
+		}
+		return setTaskList((currentList) => [...currentList, state]);
+	}, [state, taskList]);
+
+	const handleTaskSubmit = (task) => {
+		setTaskList((currentList) => [...currentList, state]);
+	};
+
+	console.log('taskList', taskList);
+	console.log(state);
 
 	return (
 		<div className='App'>
@@ -163,6 +173,7 @@ export default function App({ Component, pageProps }) {
 					mode={mode}
 					taskList={taskList}
 					reset={reset}
+					handleTaskSubmit={handleTaskSubmit}
 				/>
 			</AppContext.Provider>
 		</div>

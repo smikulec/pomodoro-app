@@ -8,7 +8,7 @@ export default function TaskList({ items }) {
 			{items !== undefined ? (
 				<ul>
 					{items.map((item) => (
-						<li key={item.name}>{item.name}</li>
+						<li key={item.taskName.name}>{item.taskName.name}</li>
 					))}
 				</ul>
 			) : null}
