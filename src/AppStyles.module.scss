@@ -1,0 +1,92 @@
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+
+.App {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: inline-flex;
+  }
+  
+  .nav-list li {
+    margin: 10px;
+    border: 1px solid rgb(228, 209, 209);
+    border-radius: 10%;
+    padding: 1rem 2rem;
+  
+  }
+  
+  .nav-list li:hover {
+    background-color: lightblue;
+  }
+  
+  .nav-link{
+    text-decoration: none;
+    color: black;
+  }
+  
+  .nav-link:active{
+    color: pink;
+  }
+  
+  #time-left {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    border: 2px solid #fc7753;
+    border-radius: 50%;
+    text-align: center;
+    margin: 1.5rem;
+    font-size: 3rem;
+    color: #fc7753;
+  }
+  
+  .settings-container {
+    display: inline-flex;
+    flex-flow: row nowrap;
+  }
+  
+  .session-container, .break-container {
+    margin: 0.5rem 1rem;
+  }
+  
+  .session-counter-container {
+    margin: 1rem;
+  }
+  
+  .length-span {
+    padding: 0.1rem 0.5rem;
+  }
+  
+  .active-button, .reset-button {
+    border-radius: 5px;
+    color: white;
+    background-color: #403D58;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    margin: 0 1rem;
+    font-style: Roboto;
+  }
+  
+  .change-button {
+    border: none;
+    border-radius: 5px;
+    background-color: #66d7d1;
+  }
+  

@@ -136,9 +136,6 @@ export default function App({ Component, pageProps }) {
 		setTaskList((currentList) => [...currentList, state]);
 	};
 
-	console.log('taskList', taskList);
-	console.log(state);
-
 	return (
 		<div className='App'>
 			<h1>Pomodoro Productivity Tracker</h1>
